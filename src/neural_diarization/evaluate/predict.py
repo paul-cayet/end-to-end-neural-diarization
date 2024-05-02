@@ -54,48 +54,6 @@ def save_model(
 
     return None
 
-def get_pipeline_config(
-        pipeline: Pipeline
-):
-    '''Function to get the pipeline configuration
-    Args
-    ----
-    pipeline: Pipeline
-        The pipeline object
-
-    Returns
-    -------
-    config: dict
-        The configuration of the pipeline
-    '''
-    config = {
-        "version":  __version__,
-        "pipeline": {
-            "name" : '.'.join(pipeline.__module__.split('.')[:-1] + [pipeline.__class__.__name__]),
-            "params" : {
-                "clustering" : pipeline.klustering,
-                "embedding" : pipeline.embedding,
-                "embedding_batch_size" : pipeline.embedding_batch_size,
-                "embedding_exclude_overlap" : pipeline.embedding_exclude_overlap,
-                # Our ckpt :
-                # "segmentation" : model_saving_path,
-                "segmentation_batch_size" : pipeline.segmentation_batch_size
-            }
-        },
-        "params": {
-            "clustering": {
-                "method": pipeline.clustering._instantiated["method"],
-                "min_cluster_size": pipeline.clustering._instantiated["min_cluster_size"],
-                "threshold": pipeline.clustering._instantiated["threshold"]
-            },
-            "segmentation": {
-                "min_duration_off": pipeline.segmentation._instantiated["min_duration_off"]
-            }
-        }
-    }
-
-    return config
-
 def load_model(
         model_saving_path: str,
         pipeline: Pipeline

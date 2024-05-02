@@ -270,12 +270,6 @@ def dashboard(
     plt_folder = os.path.abspath(plt_folder)
     os.makedirs(plt_folder, exist_ok=True)
 
-    # DER_vs_timeofday is specific to INA dataset : 
-    # if INA not in the path, remove the plot
-    # if "ina" not in dataset.lower():
-    #     plots_fn.pop("DER_vs_timeofday")
-    #     print(f"INA not in the path, removing DER_vs_timeofday plot")
-
     for key, plot_fn in plots_fn.items():
         fig = plot_fn(df)
         fig.savefig(os.path.join(plt_folder, f"{key}.png"), dpi=300)
