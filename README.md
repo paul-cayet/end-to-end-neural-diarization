@@ -130,6 +130,7 @@ python3 -m neural_diarization.evaluate.dashboard -c \
   title={Exploring Neural Diarization Techniques for Political Media Monitoring},
   author={Rondier, Lucien and Ibanez, Nicolas and Cayet, Paul and Fix, Jeremy and Rossignol, Stéphane},
   DOI={10.5281/zenodo.11106826},
+  publisher={Zenodo},
   year={2024}
 }
 ```
