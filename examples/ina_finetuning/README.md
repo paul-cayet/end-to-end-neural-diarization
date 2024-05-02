@@ -10,7 +10,7 @@ Steps:
 
 When testing locally, generate the split audio files (training is much more efficient when training with small audio files of 1 minute rather than the original 1 hour long files) using `split_audio_files.sh`.
 
-In our case, we use a remote cluster with slurm, so we use `submit-slurm.py`
+We used a remote cluster to run our experiments thus used the script `submit-slurm.py`. The code can easily be adapted for local use.
 
 Eiher way, before calling the finetuning script, the repo should look as follows:
 
@@ -23,10 +23,9 @@ Eiher way, before calling the finetuning script, the repo should look as follows
 │   ├── data_annot_small (for testing purposes)
 │   ├── torchinfo_all.json
 │   ├── train_test_split.json (optional)
-│   ├── MyDatabase-small.yml
-│   └── file12.
+│   └── MyDatabase-small.yml
 ├── src
-│   └── dinum_diarization...
+│   └── neural_diarization...
 ├── temp_rttm_folder
 │   ├── converted
 │   │     ├── 130607FR20000_B.rttm

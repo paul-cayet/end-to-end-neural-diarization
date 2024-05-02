@@ -17,11 +17,11 @@ The code is part of a end-of-studies project. The associated report can be found
 - Clean requirements.txt ✅
 - Do something about documentation générale ✅ (deleted, paper reviews put in a folder)
 - Do something about analysis ✅ (deleted, added experiment to examples)
-- Clean examples
+- Clean examples ✅
 - Remove data ina if not needed ✅ (deleted)
 - Remove notebooks ✅
 - Clean gitignore ✅
-- Add license to src files
+- Add license to src files ✅
 - Clean pyproject ✅
 
 Note: @nicolas check dashboard l256-260
@@ -48,11 +48,21 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
+## ⚠️ Modifications to the Pyannote Library
+
+**Padding audio files by default instead of raising an error when finetuning the segmentation model**
+
+In `pyannote/audio/core/io.py` in `Audio.crop` replace the argument `mode="raise"` by `mode="pad"`
+
+**Allowing the loading of finetuned models**
+
+In `pyannote/audio/core/model.py` in `Model.from_pretrained` replace the argument `strict: bool = True` by `strict: bool = False`
+
 
 ## Compute statistics over the data
 
 ```
-python3 -m dinum_diarization.evaluate.analyze_dataset -c \
+python3 -m neural_diarization.evaluate.analyze_dataset -c \
     --data DATASET_NAME \
     --rttm PATH_TO_RTTM_FILES \
     --audio PATH_TO_AUDIO_DIR
@@ -66,7 +76,7 @@ Pyannote requires the annotation data to be in a particular format. You can star
 **Converting `sd` annotations to `rttm` annotations**
 
 ```
-python3 -m dinum_diarization.labelling.convert_sd_files -c \
+python3 -m neural_diarization.labelling.convert_sd_files -c \
     --sd_dirname DIR_TO_SD_ANNOTATIONS \
     --rttm_dirname DIR_TO_WRITE_NEW_RTTM_ANNOTATIONS
 ```
@@ -80,7 +90,7 @@ Read [the example use case](examples/ina_finetuning/README.md)
 Used to accelerate training.
 
 ```
-python3 -m dinum_diarization.utils.precompute_torchaudio_info -c \
+python3 -m neural_diarization.utils.precompute_torchaudio_info -c \
     --config_path PATH_TO_TRAINING_CONFIG
 ```
 
@@ -92,7 +102,7 @@ Read [the example use case](examples/ina_finetuning/README.md)
 
 After having prepared the data, you can use the finetuning script.
 ```
-python3 -m dinum_diarization.finetune.finetune -c \
+python3 -m neural_diarization.finetune.finetune -c \
     --config_path PATH_TO_TRAINING_CONFIG
 ```
 
@@ -104,7 +114,7 @@ python3 -m dinum_diarization.finetune.finetune -c \
 **Run inference over test audio**
 
 ```
-python3 -m dinum_diarization.evaluate.predict -c \
+python3 -m neural_diarization.evaluate.predict -c \
     --audio PATH_TO_AUDIO_DIR \
     --ckpt OPTIONAL_PATH_TO_MODEL_CHECKPOINT \
     --n NUMBER_OF_FILES_TO_PREDICT
@@ -113,7 +123,7 @@ python3 -m dinum_diarization.evaluate.predict -c \
 **Evaluate predictions**
 
 ```
-python3 -m dinum_diarization.evaluate.evaluate -c \
+python3 -m neural_diarization.evaluate.evaluate -c \
     --data DATASET_NAME \
     --labels PATH_TO_LABELS_DIR \
     --chunks NUMBER_OF_CHUNKS_TO_SPLIT_AUDIO_FILES_INTO
@@ -123,7 +133,7 @@ python3 -m dinum_diarization.evaluate.evaluate -c \
 **Plot evaluation results**
 
 ```
-python3 -m dinum_diarization.evaluate.dashboard -c \
+python3 -m neural_diarization.evaluate.dashboard -c \
     --data DATASET_NAME \
     --file PATH_TO_EVALUATION_FILE
 ```

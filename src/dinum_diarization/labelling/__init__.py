@@ -1,2 +1,0 @@
-from dinum_diarization.labelling.sd_rttm_convert import convert_sd_files
-from dinum_diarization.labelling.generate_annotation_files import generate_annotations

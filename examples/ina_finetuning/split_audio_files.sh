@@ -1,5 +1,5 @@
 input_dir="/mounts/Datasets3/2024-Diarization/INA_Snowden/medias_reencoded/tv"
-output_dir="/usr/users/cei2023_2024_dinum_diarization/cayet_pau/cei_dinum/dinum_diarization/data"
+output_dir="/folder/.../data"
 
 for folder in "$input_dir"/*; do
     echo $folder
