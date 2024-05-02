@@ -1,30 +1,13 @@
 # End to end Neural Diarization
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.11106826.svg)](https://doi.org/10.5281/zenodo.11106826)
+
 
 This code package implements tools to finetune and evaluate end-to-end neural speaker diarization models.
 
-The code is part of a end-of-studies project. The associated report can be found here: ...
+The code is part of a end-of-studies project. The associated report can be found here: [Exploring Neural Diarization Techniques For Political Media Monitoring](https://doi.org/10.5281/zenodo.11106826)
 
-
-# TODO:
-- Finalize review for following codes
-    - Utils ✅ (generate_database_config should not be in utils/io.py -> is in examples)
-    - labeling ✅ (removed gen_subset.py)
-    - evaluate ✅
-    - finetune ✅ (generate_database_config should not be in finetune/helpers.py -> is in examples)
-- Add information in readme ✅
-- Clean requirements.txt ✅
-- Do something about documentation générale ✅ (deleted, paper reviews put in a folder)
-- Do something about analysis ✅ (deleted, added experiment to examples)
-- Clean examples ✅
-- Remove data ina if not needed ✅ (deleted)
-- Remove notebooks ✅
-- Clean gitignore ✅
-- Add license to src files ✅
-- Clean pyproject ✅
-
-Note: @nicolas check dashboard l256-260
 
 # Usage
 
@@ -143,10 +126,10 @@ python3 -m neural_diarization.evaluate.dashboard -c \
 # Citation
 
 ```
-@article{2024exploring,
+@article{rondier2024exploring,
   title={Exploring Neural Diarization Techniques for Political Media Monitoring},
-  author={Cayet, Paul and Ibanez, Nicolas and Rondier, Lucien},
-  journal={Zenodo ...},
+  author={Rondier, Lucien and Ibanez, Nicolas and Cayet, Paul and Fix, Jeremy and Rossignol, Stéphane},
+  DOI={10.5281/zenodo.11106826},
   year={2024}
 }
 ```
