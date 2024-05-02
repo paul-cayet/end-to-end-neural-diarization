@@ -1,0 +1,15 @@
+Databases:
+  Mydata_inabase: /usr/users/cei2023_2024_dinum_diarization/cayet_pau/cei_dinum/dinum_diarization/data/{uri}.MPG.wav
+Protocols:
+  Mydata_inabase:
+    SpeakerDiarization:
+      MyProtocol:
+        development:
+          annotated: /usr/users/cei2023_2024_dinum_diarization/cayet_pau/cei_dinum/dinum_diarization/data_ina/data_annot_small/val.uem
+          annotation: /usr/users/cei2023_2024_dinum_diarization/cayet_pau/cei_dinum/dinum_diarization/data_ina/data_annot_small/few.val.rttm
+          uri: /usr/users/cei2023_2024_dinum_diarization/cayet_pau/cei_dinum/dinum_diarization/data_ina/data_annot_small/filelist_val.lst
+        scope: file
+        train:
+          annotated: /usr/users/cei2023_2024_dinum_diarization/cayet_pau/cei_dinum/dinum_diarization/data_ina/data_annot_small/train.uem
+          annotation: /usr/users/cei2023_2024_dinum_diarization/cayet_pau/cei_dinum/dinum_diarization/data_ina/data_annot_small/few.train.rttm
+          uri: /usr/users/cei2023_2024_dinum_diarization/cayet_pau/cei_dinum/dinum_diarization/data_ina/data_annot_small/filelist_train.lst

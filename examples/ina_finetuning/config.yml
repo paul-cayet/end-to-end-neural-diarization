@@ -1,0 +1,41 @@
+training_config:
+  model_name: "pyannote/segmentation-3.0"
+  optimizer_method: "Adam"
+  learning_rate: 0.005
+  precomputed_torchinfo_path: null #"data_ina/torchinfo_all.json"
+  "model_name_prefix": "finetuning-3.0_1"
+
+trainer:
+  max_epochs: 100
+  accelerator: "gpu"
+  gradient_clip_val: 0.5
+
+dataset:
+  db_config_path: "data_ina/MyDatabase-finetuning.yml"
+  # torchaudio_path: "/usr/users/cei2023_2024_dinum_diarization/cayet_pau/cei_dinum/dinum_diarization/data_ina1/torchinfo_all.json"
+  annotation_path: "data_ina/data_annot_finetuning"
+  protocol_fullname: "Mydata_inabase.SpeakerDiarization.MyProtocol"
+
+model:
+  "checkpoint": "pyannote/segmentation-3.0"
+  "device": "auto"
+
+task:
+  vad_loss: null
+  max_speakers_per_chunk : 3
+  max_speakers_per_frame : 2
+  batch_size: 64
+  num_workers: 8
+
+callbacks:
+  checkpoint_dirname: "/usr/users/cei2023_2024_dinum_diarization/cayet_pau/cei_dinum/dinum_diarization/checkpoint"
+  save_last: false
+  save_top_k: 1
+  every_n_epochs: 1
+  save_weights_only: false
+  early_stopping_params: null
+  use_rich_progress_bar: true
+
+wandb_config:
+  project: "diarization_finetuning_ina"
+  entity: "dinum-dia"

@@ -1,0 +1,30 @@
+# Packaging artifacts
+*.egg-info
+*.dist-info
+build/
+dist/
+pip-wheel-metadata/
+.eggs
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.venv
+venv
+.tokens
+.env
+**/.temp*
+configs
+
+
+# Pytorch
+lightning_logs/
+
+**/logs/
+
+__pycache__/
+
+experiments/
+data/
+wandb/

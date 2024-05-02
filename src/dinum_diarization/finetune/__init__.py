@@ -1,0 +1,1 @@
+from dinum_diarization.finetune.finetune import finetune
