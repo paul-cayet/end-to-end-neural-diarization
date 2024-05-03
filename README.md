@@ -1,13 +1,11 @@
 # End to end Neural Diarization
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.11106826.svg)](https://doi.org/10.5281/zenodo.11106826)
 
 
 This code package implements tools to finetune and evaluate end-to-end neural speaker diarization models.
 
-The code is part of a end-of-studies project. The associated report can be found here: [Exploring Neural Diarization Techniques For Political Media Monitoring](https://doi.org/10.5281/zenodo.11106826)
-
+The code is part of a end-of-studies project. The associated report will be uploaded later.
 
 # Usage
 
@@ -129,8 +127,6 @@ python3 -m neural_diarization.evaluate.dashboard -c \
 @article{rondier2024exploring,
   title={Exploring Neural Diarization Techniques for Political Media Monitoring},
   author={Rondier, Lucien and Ibanez, Nicolas and Cayet, Paul and Fix, Jeremy and Rossignol, Stéphane},
-  DOI={10.5281/zenodo.11106826},
-  publisher={Zenodo},
   year={2024}
 }
 ```
